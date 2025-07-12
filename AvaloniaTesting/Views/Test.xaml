@@ -1,0 +1,47 @@
+﻿<Window x:Class="AvaloniaTestingProgramm.Test"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Прохождение теста" Height="500" Width="600"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Название теста:" Grid.Row="0" HorizontalAlignment="Center" FontWeight="Bold"/>
+        <TextBox x:Name="TestName" Grid.Row="0" HorizontalAlignment="Center" Width="300" Margin="0,20,0,0" 
+                 IsReadOnly="True" TextAlignment="Center" FontWeight="Bold"/>
+
+        <TextBlock Text="Вопрос:" Grid.Row="1" HorizontalAlignment="Center" Margin="0,0,0,5"/>
+        <TextBox x:Name="Question" Grid.Row="1" Margin="50,20,50,0" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"
+                 IsReadOnly="True" FontSize="14" Height="150"/>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20">
+            <CheckBox x:Name="Answer1cb" Margin="5" VerticalAlignment="Center" Checked="Answer1cb_Checked"/>
+            <TextBox x:Name="Answer1" Width="200" Height="25" Margin="5"/>
+
+            <CheckBox x:Name="Answer2cb" Margin="20,5,5,5" VerticalAlignment="Center" Checked="Answer2cb_Checked"/>
+            <TextBox x:Name="Answer2" Width="200" Height="25" Margin="5"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
+            <CheckBox x:Name="Answer3cb" Margin="5" VerticalAlignment="Center" Checked="Answer3cb_Checked"/>
+            <TextBox x:Name="Answer3" Width="200" Height="25" Margin="5"/>
+
+            <CheckBox x:Name="Answer4cb" Margin="20,5,5,5" VerticalAlignment="Center" Checked="Answer4cb_Checked"/>
+            <TextBox x:Name="Answer4" Width="200" Height="25" Margin="5"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20">
+            <Button x:Name="exitTest" Content="Завершить" Width="100" Height="30" Margin="10" 
+                    Click="saveAndExitTestBtn_Click"/>
+            <Button x:Name="nextQuestion" Content="Далее" Width="100" Height="30" Margin="10" 
+                    Click="createNextQuestioBtn_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
